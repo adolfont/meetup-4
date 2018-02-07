@@ -27,3 +27,15 @@ FATAL 28000 (invalid_authorization_specification): role
 - `sudo -u kelvinst psql postgres`
 - `CREATE USER postgres SUPERUSER;`
 - `CREATE DATABASE postgres WITH OWNER postgres;`
+
+
+
+I get the same error using Ubuntu 17.10 and I corrected resetting the 'postgres' password:
+
+- `$ sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"`
+
+and restarting postgres service:
+
+- `sudo service postgresql restart`
+
+
